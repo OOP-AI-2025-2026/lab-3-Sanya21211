@@ -2,6 +2,15 @@ package org.example.task2;
 
 public class Main {
     public static void main(String[] args) {
+        try {
+            Box box = new Box(3, 4, 5);
+
+            System.out.println("Загальна площа коробки: " + box.surfaceArea());
+            System.out.println("Площа бічних граней: " + box.lateralSurfaceArea());
+            System.out.println("Об'єм коробки: " + box.volume());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Не вдалося створити коробку: " + e.getMessage());
+        }
 
         Cart cart = new Cart(new Item[10]);
         cart.add(new Item(1, "Samsung Galaxy S23", 27999));
